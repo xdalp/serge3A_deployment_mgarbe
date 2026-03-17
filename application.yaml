@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: serge3A
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/xdalp/serge3A.git
+    targetRevision: main
+    path: deployment
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: user-mgarbe
+  syncPolicy:
+    automated:
+      selfHeal: true

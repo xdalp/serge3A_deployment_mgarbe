@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: serge3A-deployment
+  labels:
+    app: serge3A
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: serge3A
+  template:
+    metadata:
+      labels:
+        app: tserge3Ac
+    spec:
+      containers:
+      - name: serge3A
+        image: tpradeau/serge3a:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5003

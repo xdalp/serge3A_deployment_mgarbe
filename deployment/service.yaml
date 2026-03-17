@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: serge3A-service
+spec:
+  selector:
+    app: serge3A
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5003
